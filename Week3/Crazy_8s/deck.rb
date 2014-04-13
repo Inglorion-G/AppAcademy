@@ -17,11 +17,20 @@ class Deck
   end
 
   def initialize(cards = Deck.all_cards)
-    @cards = cards
+    @cards = cards.shuffle
     @discard = []
+  end
+  
+  def shuffle_deck
+    @cards.shuffle!
   end
 
   # Returns the number of cards in the deck.
+  
+  def top_card
+    return nil if @discard.empty?
+    @discard.last.to_s
+  end
   
   def discard(card)
     @discard += card

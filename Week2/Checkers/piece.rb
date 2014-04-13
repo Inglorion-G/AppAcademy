@@ -25,12 +25,16 @@ class Piece
   attr_reader :color, :symbol
   attr_accessor :position
   
-  def initialize(color, board, position)
+  def initialize(color, board, position, king=false)
     @color = color
     @board = board
     @position = position
-    @king = false
+    @king = king
     @symbol = PIECE
+  end
+  
+  def king?
+    @king
   end
   
   def perform_jump(new_pos)

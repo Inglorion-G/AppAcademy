@@ -57,7 +57,7 @@ class Board
           # duplicate_board.set([t_idx, r_idx], nil)
         else
           dup_board.set([t_idx, r_idx], 
-          tile.class.new(tile.color, dup_board, [t_idx, r_idx]))
+          tile.class.new(tile.color, dup_board, [t_idx, r_idx], tile.king?))
         end
       end
     end
